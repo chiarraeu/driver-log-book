@@ -24,7 +24,7 @@
     <!-- CSS Files -->
     <link id="pagestyle" href="../assets/css/soft-ui-dashboard.css?v=1" rel="stylesheet" />
     @livewireStyles
-    @bukStyles
+    @bukStyles(true)
 </head>
 
 <body class="g-sidenav-show bg-gray-100">
@@ -49,7 +49,7 @@
     <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
     <script src="assets/js/soft-ui-dashboard.js"></script>
     @livewireScripts
-    @bukScripts
+    @bukScripts(true)
 </body>
 
 </html>
