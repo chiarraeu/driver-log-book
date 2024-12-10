@@ -1,6 +1,6 @@
 <div class="main-content">
     <div class="page-header min-height-300 border-radius-xl mt-4"
-        style="background-image: url('../assets/img/curved-images/curved0.jpg'); background-position-y: 50%;">
+        style="background-image: url('../assets/img/curved-images/curved14.jpg'); background-position-y: 50%;">
         <span class="mask bg-gradient-primary opacity-6"></span>
     </div>
     <div class="card card-body blur shadow-blur mx-4 mt-n6">
@@ -18,10 +18,10 @@
             <div class="col-auto my-auto">
                 <div class="h-100">
                     <h5 class="mb-1">
-                        Alec Thompson
+                        Arif Murseli
                     </h5>
                     <p class="mb-0 font-weight-bold text-sm">
-                        CEO / Co-Founder
+                        Transport Manager
                     </p>
                 </div>
             </div>

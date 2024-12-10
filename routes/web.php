@@ -16,8 +16,8 @@ use App\Http\Livewire\Rtl;
 
 use App\Http\Livewire\LaravelExamples\UserProfile;
 use App\Http\Livewire\LaravelExamples\UserManagement;
+use App\Http\Controllers\TravelControler;
 
-use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,4 +52,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/laravel-user-profile', UserProfile::class)->name('user-profile');
     Route::get('/laravel-user-management', UserManagement::class)->name('user-management');
 });
+
+use App\Http\Controllers\TravelController;
+Route::get('/travels', [TravelController::class, 'index'])->name('travels.index');
+Route::get('/travels/create', [TravelController::class, 'create'])->name('travels.create');
+Route::post('/travels/create', [TravelController::class, 'store'])->name('travels.store');
+Route::get('/travels/export', [TravelController::class, 'export'])->name('travels.export');
+
+
 
