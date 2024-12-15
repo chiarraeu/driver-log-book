@@ -61,17 +61,20 @@ class TravelController extends Controller
 
     /**
      * Get a list of travels based on user's role and optional truck filter.
+     * Order by date.
      */
-    private function getTravels($truck_id = null)
-    {
-        if (Auth::user()->role_id == 3) {
-            return $truck_id ?
-                Travel::where('truck_id', $truck_id)->get() :
-                Travel::all();
-        }
 
-        return Travel::where('user_id', Auth::id())->get();
+     private function getTravels($truck_id = null)
+{
+    if (Auth::user()->role_id == 3) {
+        return $truck_id ?
+            Travel::where('truck_id', $truck_id)->orderBy('created_at', 'desc')->get() :
+            Travel::orderBy('created_at', 'desc')->get();
     }
+
+    return Travel::where('user_id', Auth::id())->orderBy('created_at', 'desc')->get();
+}
+
 
     /**
      * Validate the incoming request for storing/updating travels.
