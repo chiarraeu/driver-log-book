@@ -16,6 +16,7 @@ use App\Http\Livewire\Rtl;
 
 use App\Http\Livewire\LaravelExamples\UserProfile;
 use App\Http\Livewire\LaravelExamples\UserManagement;
+use App\Http\Controllers\TravelController;
 use App\Http\Controllers\TravelControler;
 
 
@@ -40,12 +41,11 @@ Route::get('/login', Login::class)->name('login');
 Route::get('/login/forgot-password', ForgotPassword::class)->name('forgot-password');
 
 Route::get('/reset-password/{id}',ResetPassword::class)->name('reset-password')->middleware('signed');
-
 Route::middleware('auth')->group(function () {
     Route::get('/dashboard', Dashboard::class)->name('dashboard');
     Route::get('/billing', Billing::class)->name('billing');
     Route::get('/profile', Profile::class)->name('profile');
-    Route::get('/tables', Tables::class)->name('tables');
+    Route::get('/tables',Tables::class)->name('tables');
     Route::get('/static-sign-in', StaticSignIn::class)->name('sign-in');
     Route::get('/static-sign-up', StaticSignUp::class)->name('static-sign-up');
     Route::get('/rtl', Rtl::class)->name('rtl');
@@ -53,7 +53,6 @@ Route::middleware('auth')->group(function () {
     Route::get('/laravel-user-management', UserManagement::class)->name('user-management');
 });
 
-use App\Http\Controllers\TravelController;
 Route::get('/travels', [TravelController::class, 'index'])->name('travels.index');
 Route::get('/travels/create', [TravelController::class, 'create'])->name('travels.create');
 Route::post('/travels/create', [TravelController::class, 'store'])->name('travels.store');

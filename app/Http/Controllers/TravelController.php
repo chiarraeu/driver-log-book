@@ -31,8 +31,7 @@ class TravelController extends Controller
      */
     public function store(Request $request)
     {
-        //dd($request->all());
-        //dd(Auth::id());
+
 
 
 
